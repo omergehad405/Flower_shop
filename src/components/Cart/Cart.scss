@@ -1,0 +1,67 @@
+@import "../../style//main.scss";
+
+.cart {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 20px;
+  position: relative;
+  width: 400px;
+  height: 85vh;
+  max-height: 100%;
+  background-color: white;
+  overflow-y: scroll;
+  .title {
+    text-align: center;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  .empty_text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 1rem;
+  }
+
+  .cart_products {
+    margin-top: 2rem;
+    position: relative;
+    .product {
+      margin: 1rem 0;
+      padding-bottom: 15px;
+      @include flexCenter();
+      gap: 1rem;
+      border-bottom: 1px solid #ddd;
+      img {
+        width: 100px;
+      }
+      .product_info {
+        P {
+          padding: 5px 0;
+        }
+      }
+      .product_quantity {
+        @include flexCenter();
+        gap: 5px;
+
+        button {
+          padding: 0;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          @include flexCenter();
+          font-size: 16px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .close_cart {
+    position: absolute;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+}

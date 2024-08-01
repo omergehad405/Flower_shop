@@ -1,0 +1,75 @@
+@import "../../style//main.scss";
+
+.about {
+  margin: 10rem 0;
+  .heading {
+    width: calc(100% - 2rem);
+    text-align: center;
+    background-color: rgba(255, 51, 153, 0.05);
+    font-size: 25px;
+    padding: 10px 15px;
+    margin: 0 auto 2rem;
+    font-size: 3rem;
+    span {
+      color: $main-color;
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    .video_container {
+      position: relative;
+      video {
+        max-width: 550px;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+        border: 20px solid $white-color;
+      }
+      p {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: $white-color;
+        padding: 20px;
+        font-size: 2.5rem;
+        width: 100%;
+        text-align: center;
+        mix-blend-mode: screen;
+      }
+    }
+
+    .info {
+      h1 {
+        text-transform: capitalize;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        line-height: 2;
+        color: $p-color;
+        font-size: 15px;
+        margin-bottom: 1rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .about {
+    margin: 5rem 0;
+    .container {
+      .video_container {
+        video {
+          width: 350px;
+          border-width: 15px;
+        }
+        p {
+          padding: 15px;
+          font-size: 1.5rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@import "../../style/main.scss";
+
+button {
+  color: $white-color;
+  background-color: $second-color;
+  font-size: 1.5rem;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: $main-transition;
+
+  &:hover {
+    background-color: $main-color;
+  }
+}

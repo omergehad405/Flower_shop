@@ -1,0 +1,57 @@
+@import "../../style/main";
+
+.contact {
+  margin: 5rem 0;
+  .heading {
+    width: calc(100% - 2rem);
+    text-align: center;
+    background-color: rgba(255, 51, 153, 0.05);
+    font-size: 25px;
+    padding: 10px 15px;
+    margin: 0 auto 2rem;
+    font-size: 3rem;
+    span {
+      color: $main-color;
+    }
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+
+    form {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-evenly;
+      flex-direction: column;
+      background-color: $white-color;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+      gap: 1rem;
+
+      input,
+      textArea {
+        width: 100%;
+        padding: 15px;
+        border: none;
+        outline: none;
+        border: 1px solid #ddd;
+      }
+      textArea {
+        height: 200px;
+      }
+      button {
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact {
+    .container {
+      img {
+        display: none;
+      }
+    }
+  }
+}

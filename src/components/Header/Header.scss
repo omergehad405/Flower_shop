@@ -1,0 +1,95 @@
+@import "../../style/main.scss";
+
+header {
+  position: relative;
+
+  box-shadow: 0 0.5rem 1rem rgba(158, 30, 30, 0.1);
+  .container {
+    @include flexBox(row);
+    height: 90px;
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+
+      span {
+        color: $main-color;
+      }
+    }
+
+    ul {
+      @include flexCenter();
+      gap: 2rem;
+
+      li {
+        a {
+          text-transform: capitalize;
+          color: $second-color;
+          font-size: 22px;
+          cursor: pointer;
+          transition: $main-transition;
+
+          &:hover,
+          &.active {
+            color: $main-color;
+          }
+        }
+      }
+    }
+
+    .cart_container {
+      position: absolute;
+      right: 20px;
+      top: 120%;
+      z-index: 999;
+      transition: 0.5s;
+      opacity: 0;
+    }
+
+    .bars {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    position: relative;
+    .container {
+      .navbar {
+        width: 100%;
+        left: -250rem;
+        height: 100vh;
+        position: absolute;
+        top: 100%;
+        background-color: $second-color;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 5rem;
+        padding: 5rem 2rem;
+        justify-content: flex-start;
+        transition: 0.5s;
+        z-index: 9999;
+        li {
+          a {
+            font-size: 2rem;
+            color: $white-color;
+          }
+        }
+
+        &.opened {
+          left: 0;
+        }
+        &.closed {
+          left: -250rem;
+        }
+      }
+      .cart_container {
+        right: 0px;
+      }
+      .bars {
+        font-size: 2rem;
+        display: block;
+      }
+    }
+  }
+}

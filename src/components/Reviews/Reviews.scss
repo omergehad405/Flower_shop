@@ -1,0 +1,52 @@
+@import "../../style/main";
+
+.reviews {
+  margin: 5rem 0;
+  .heading {
+    width: calc(100% - 2rem);
+    text-align: center;
+    background-color: rgba(255, 51, 153, 0.05);
+    font-size: 25px;
+    padding: 10px 15px;
+    margin: 0 auto 2rem;
+    font-size: 3rem;
+    span {
+      color: $main-color;
+    }
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+
+    .review {
+      position: relative;
+      padding: 25px;
+      background-color: $white-color;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      p {
+        color: $p-color;
+        line-height: 2;
+        margin-bottom: 1.5rem;
+      }
+      .user_details {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        img {
+          width: 60px;
+          height: 60px;
+          border-radius: 50%;
+        }
+      }
+      span {
+        position: absolute;
+        right: 25px;
+        font-size: 5rem;
+        bottom: 35px;
+        color: $p-color;
+      }
+    }
+  }
+}

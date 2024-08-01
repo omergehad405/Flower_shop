@@ -1,0 +1,137 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: 0.2s linear;
+  list-style: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Small */
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+.heading {
+  width: 1150px;
+  text-align: center;
+  background-color: rgba(255, 51, 153, 0.05);
+  color: black;
+  padding: 15px 0;
+  margin-bottom: 25px;
+  font-size: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.heading span {
+  color: var(--pink);
+}
+
+/* Small */
+@media (max-width: 768px) {
+  .heading {
+    width: 400px;
+  }
+}
+/* Medium */
+@media (min-width: 992px) {
+  .heading {
+    width: 970px;
+  }
+}
+/* Large */
+@media (min-width: 1200px) {
+  .heading {
+    width: 1170px;
+  }
+}
+header {
+  box-shadow: 0 0.5rem 1rem rgba(158, 30, 30, 0.1);
+}
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+  height: 90px;
+}
+header .container .logo {
+  font-size: 2rem;
+  font-weight: bold;
+}
+header .container .logo span {
+  color: #e84393;
+}
+header .container ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+header .container ul li a {
+  text-transform: capitalize;
+  color: #333;
+  font-size: 22px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+header .container ul li a:hover, header .container ul li a.active {
+  color: #e84393;
+}
+header .container .bars {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  header {
+    position: relative;
+  }
+  header .container .navbar {
+    width: 100%;
+    left: 0;
+    height: 100vh;
+    position: absolute;
+    top: 100%;
+    background-color: #333;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5rem;
+    padding: 5rem 2rem;
+    justify-content: flex-start;
+  }
+  header .container .navbar li a {
+    font-size: 2rem;
+    color: #fff;
+  }
+}/*# sourceMappingURL=Header.css.map */

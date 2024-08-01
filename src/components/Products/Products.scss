@@ -1,0 +1,86 @@
+@import "../../style/main.scss";
+
+.Lproducts {
+  position: relative;
+  margin: 5rem 0;
+  .heading {
+    width: calc(100% - 2rem);
+    text-align: center;
+    background-color: rgba(255, 51, 153, 0.05);
+    font-size: 25px;
+    padding: 10px 15px;
+    margin: 0 auto 5rem;
+    font-size: 3rem;
+    span {
+      color: $main-color;
+    }
+  }
+  .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
+    .product {
+      background-color: $white-color;
+      padding: 25px;
+      text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+      .image_box {
+        position: relative;
+        margin-bottom: 1rem;
+        img {
+          width: 250px;
+          transition: $main-transition;
+        }
+        .options {
+          opacity: 0;
+          bottom: -50px;
+          width: 100%;
+          position: absolute;
+          transition: $main-transition;
+          button {
+            cursor: pointer;
+            border-radius: 0;
+            margin: 0 2px;
+            background-color: $main-color;
+            a {
+              text-transform: capitalize;
+              font-size: 18px;
+              color: $white-color;
+            }
+          }
+
+          &.apear {
+            opacity: 1;
+            bottom: -10px;
+          }
+          &.desapear {
+            opacity: 0;
+            bottom: -50px;
+          }
+        }
+      }
+
+      .info {
+        h3 {
+          text-transform: capitalize;
+          font-size: 2rem;
+          margin-bottom: 0.5rem;
+        }
+        span {
+          color: $main-color;
+          font-weight: bold;
+          font-size: 1.5rem;
+        }
+      }
+
+      &:hover {
+        .image_box {
+          img {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
+  }
+}
