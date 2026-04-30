@@ -7,28 +7,28 @@ function Reviews() {
       id: 1,
       reviewInfo:
         "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Corrupti Asperiores Laboriosam Praesentium Enim Maiores? Ad Repellat Voluptates Alias Facere Repudiandae Dolor Accusamus Enim Ut Odit, Aliquam Nesciunt Eaque Nulla Dignissimos.",
-      userImg: "/images/pic-1.jpg",
+      userImg: "./images/pic-1.jpg",
       userName: "john deo",
     },
     {
       id: 2,
       reviewInfo:
         "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Corrupti Asperiores Laboriosam Praesentium Enim Maiores? Ad Repellat Voluptates Alias Facere Repudiandae Dolor Accusamus Enim Ut Odit, Aliquam Nesciunt Eaque Nulla Dignissimos.",
-      userImg: "/images/pic-2.jpg",
+      userImg: "./images/pic-2.jpg",
       userName: "john deo",
     },
     {
       id: 3,
       reviewInfo:
         "Lorem Ipsum Dolor Sit Amet Consectetur Adipisicing Elit. Corrupti Asperiores Laboriosam Praesentium Enim Maiores? Ad Repellat Voluptates Alias Facere Repudiandae Dolor Accusamus Enim Ut Odit, Aliquam Nesciunt Eaque Nulla Dignissimos.",
-      userImg: "/images/pic-3.jpg",
+      userImg: "./images/pic-3.jpg",
       userName: "john deo",
     },
   ]);
   return (
     <section className="reviews" id="reviews">
       <h1 className="heading">
-        <span>latest </span>Products
+        <span>latest </span>Reviews
       </h1>
       <div className="container">
         {reviews.map((review) => (

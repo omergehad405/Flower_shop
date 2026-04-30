@@ -11,7 +11,7 @@ function About() {
 
       <div className="container">
         <div className="video_container">
-          <video src="/images/about-vid.mp4" loop autoPlay muted />
+          <video src="./images/about-vid.mp4" loop autoPlay muted />
           <p>best flower sellers</p>
         </div>
         <div className="info">

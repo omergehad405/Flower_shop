@@ -3,13 +3,6 @@ import "./Contact.scss";
 import Button from "../Button/Button";
 
 function Contact() {
-  const [userDetails, setUserDetails] = useState({
-    name: "",
-    email: "",
-    number: "",
-    message: "",
-  });
-
   const handleSubmit = (e) => {
     e.preventDefault();
   };
@@ -27,7 +20,7 @@ function Contact() {
           <textarea placeholder="Message" />
           <Button text="send Message" />
         </form>
-        <img src="/images/contact-img.svg" />
+        <img src="./images/contact-img.svg" />
       </div>
     </section>
   );

@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/Flower_shop/git",
+  base: "/Flower_shop/",
   plugins: [react()],
 });

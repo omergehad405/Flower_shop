@@ -1,61 +1,37 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./Cart.scss";
-import { CartContext } from "../Context/CartContext";
+import { useCartStore } from "../RSM/cart-store";
 
 function Cart({ handleCloseCart }) {
-  const { cart, setCart } = useContext(CartContext);
-
-  function handleIncreaseQuantity(id) {
-    setCart((prevCart) =>
-      prevCart.map((item) =>
-        item.id === id ? { ...item, quantity: item.quantity + 1 } : item
-      )
-    );
-  }
-  function handleDecreaseQuantity(id) {
-    setCart((prevCart) => {
-      const updatedCart = prevCart
-        .map((item) => {
-          if (item.id === id) {
-            if (item.quantity > 1) {
-              return { ...item, quantity: item.quantity - 1 };
-            } else {
-              return null;
-            }
-          }
-          return item;
-        })
-        .filter(Boolean);
-
-      return updatedCart;
-    });
-  }
+  const { cart, increaseQuantity, decreaseQuantity } = useCartStore(
+    (state) => ({
+      cart: state.cart,
+      increaseQuantity: state.increaseQuantity,
+      decreaseQuantity: state.decreaseQuantity,
+    })
+  );
 
   return (
     <div className="cart">
       <div className="close_cart">
         <i className="fa-solid fa-xmark" onClick={handleCloseCart}></i>
       </div>
-      <h2 className="title">Cart Items</h2>
+      <h2 className="title">Cart products</h2>
       {cart.length === 0 ? (
         <p className="empty_text">No items in cart</p>
       ) : (
         <div className="cart_products">
-          {cart.map((item) => (
-            <div key={item.id} className="product">
-              <img src={item.img} alt={item.title} />
+          {cart.map((product) => (
+            <div key={product.id} className="product">
+              <img src={product.img} alt={product.title} />
               <div className="product_info">
-                <h3>{item.title}</h3>
-                <p>${(item.price * item.quantity).toFixed(2)}</p>
+                <h3>{product.title}</h3>
+                <p>${(product.price * product.quantity).toFixed(2)}</p>
               </div>
               <div className="product_quantity">
-                <button onClick={() => handleDecreaseQuantity(item.id)}>
-                  -
-                </button>
-                {item.quantity}
-                <button onClick={() => handleIncreaseQuantity(item.id)}>
-                  +
-                </button>
+                <button onClick={() => decreaseQuantity(product.id)}>-</button>
+                {product.quantity}
+                <button onClick={() => increaseQuantity(product.id)}>+</button>
               </div>
             </div>
           ))}
